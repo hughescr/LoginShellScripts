@@ -1,5 +1,0 @@
-# Android NDK Stuff
-NVPACK="/Users/craig/NVPACK"
-export NDKROOT="$NVPACK/android-ndk-r7b"
-export ANT_HOME="$NVPACK/apache-ant-1.8.2"
-export PATH=$PATH:$NVPACK/android-sdk-macosx/platform-tools:$NVPACK/android-sdk-macosx/tools:$ANT_HOME/bin:$NDKROOT
