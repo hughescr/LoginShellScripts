@@ -1,4 +1,3 @@
-alias pipealert='/Applications/PipeAlert.app/Contents/MacOS/PipeAlert'
 alias cls='clear'
 alias mroe='more'
 
