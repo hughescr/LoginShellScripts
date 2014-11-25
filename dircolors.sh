@@ -1,1 +1,1 @@
-[[ -x /opt/local/libexec/gnubin/dircolors ]] && eval `/opt/local/libexec/gnubin/dircolors "$HOME/.dircolors"`
+dircolors 2>&1 > /dev/null && eval `dircolors "$HOME/.dircolors"`
