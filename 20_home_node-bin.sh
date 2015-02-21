@@ -1,2 +1,2 @@
 # My own bin directory wins
-export PATH="${HOME}/node_modules/.bin":$PATH
+export PATH="./node_modules/.bin:${HOME}/node_modules/.bin":$PATH
