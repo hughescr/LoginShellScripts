@@ -15,3 +15,6 @@ alias decolor='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 
 # Allow aliases to be sudo'd
 alias sudo='sudo '
+
+# Merge master to develop then push to github with tags
+alias hubpush='git checkout develop;git merge master;git push github develop master --follow-tags'
