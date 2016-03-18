@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 alias cls='clear'
 alias mroe='more'
 
@@ -17,4 +18,7 @@ alias decolor='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 alias sudo='sudo '
 
 # Merge master to develop then push to github with tags
-alias hubpush='git checkout develop;git merge master;git push github develop master --follow-tags'
+alias hubpush='git checkout develop;git merge master;git push github master develop --follow-tags'
+
+# Command line error fixing
+eval "$(thefuck --alias)"
