@@ -11,7 +11,7 @@ fi
 alias ls="ls -Fa ${colorflag}"
 
 #alias sed='/sw/bin/gsed'
-alias top='top -R -s 2 -n30'
+alias top='top -d -s 2 -o power -O cpu'
 alias decolor='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 
 # Allow aliases to be sudo'd
