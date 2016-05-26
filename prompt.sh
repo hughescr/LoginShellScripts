@@ -28,14 +28,17 @@ function _git_prompt() {
             branch=${BASH_REMATCH[1]}
             test "$branch" != master || branch=''
             branch="$branch `git describe --tags --dirty --always`"
-		elif [[ "$git_status" =~ HEAD\ detached\ (from|at)\ ([^[:space:]]+) ]]; then
-			branch="tag:${BASH_REMATCH[2]}"
+        elif [[ "$git_status" =~ HEAD\ detached\ (from|at)\ ([^[:space:]]+) ]]; then
+            branch="tag:${BASH_REMATCH[2]}"
         else
             # Detached HEAD.  (branch=HEAD is a faster alternative.)
             branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
                 echo HEAD`)"
         fi
+        if [ -n "$(declare -F iterm2_set_user_var)" ]; then iterm2_set_user_var gitBranch "${branch}"; fi
         echo -n "${ansi}${branch}${reset} "
+    else
+        if [ -n "$(declare -F iterm2_set_user_var)" ]; then iterm2_set_user_var gitBranch ""; fi
     fi
 }
 function _prompt_command() {
