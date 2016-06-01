@@ -41,8 +41,12 @@ function _git_prompt() {
     fi
 }
 
+# Each shell will have its own wakatime tracking file to lock so only one wakatime process will run at a time per shell (debouncing)
+WAKATIME_LOCKFILE=$(mktemp -d)
+
 function _prompt_command() {
     PS1="$(_git_prompt)""[\u@\h:\w]\$ "
+    [[ -x /usr/local/bin/wakatime && -x /usr/local/bin/lockrun ]] && (/usr/local/bin/lockrun --quiet --lockfile="${WAKATIME_LOCKFILE}/wakatime.lck" -- /usr/local/bin/wakatime --entity-type app --entity "${PWD}" --alternate-project Terminal --alternate-language Directory &)
 }
 
 PROMPT_COMMAND="_prompt_command;$PROMPT_COMMAND"
