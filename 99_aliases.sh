@@ -21,4 +21,4 @@ alias sudo='sudo '
 alias hubpush='git checkout develop;git merge master;git push github master develop --follow-tags'
 
 # Command line error fixing
-eval "$(thefuck --alias)"
+thefuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
