@@ -4,9 +4,9 @@ alias mroe='more'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
+    colorflag="--color"
 else # OS X `ls`
-	colorflag="-G"
+    colorflag="-G"
 fi
 alias ls="ls -Fa ${colorflag}"
 
@@ -22,3 +22,6 @@ alias hubpush='git checkout develop;git merge master;git push github master deve
 
 # Command line error fixing
 thefuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
+
+# Use helpful defaults for nettop
+alias nettop='nettop -cdP -j bytes_in,bytes_out -k interface,state,rx_dupe,rx_ooo,re-tx,rtt_avg,rcvsize,tx_win,tc_class,tc_mgt,cc_algo,P,C,R,W'
