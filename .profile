@@ -5,3 +5,5 @@ if [[ -d "$HOME/.bashd"  && -r "$HOME/.bashd" && -x "$HOME/.bashd" ]]; then
 		[[ ${i##*/} != @(*~|*.bak|*.swp|\#*\#|*.dpkg*|*.rpm@(orig|new|save)|Makefile*) && -f "$HOME/.bashd/$i" && -r "$HOME/.bashd/$i" ]] && . "$HOME/.bashd/$i"
 	done
 fi
+
+test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
