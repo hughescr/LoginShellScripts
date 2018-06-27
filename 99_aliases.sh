@@ -28,6 +28,7 @@ alias nettop='nettop -cdP -j bytes_in,bytes_out -k interface,state,rx_dupe,rx_oo
 
 # Make xargs check for alias substitution
 alias xargs='xargs '
+alias xargs0='xargs -0 '
 
 # Image aspect ratio checking to tab-separated output (can be piped to "align -s t+")
 alias archeck="identify -format '%[fx:round((w*1000)/h)/1000]	%wx%h	%M\n'"
