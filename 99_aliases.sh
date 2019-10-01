@@ -35,5 +35,5 @@ alias archeck="identify -format '%[fx:round((w*1000)/h)/1000]	%wx%h	%M\n'"
 
 # Mac function to list TCP ports the machine is listening on since netstat -l doesn't work right
 macnst (){
-    netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $9 | getline procname;pos=split($4,chunks,".");addr=$4;sub(/\.[^.]*$/,"",addr);port=chunks[pos];colred="\033[01;31m";colclr="\033[0m"; print colred "proto: " colclr $1 colred " | addr: " colclr addr colred " | port: " colclr port colred " | pid: " colclr $9 colred " | name: " colclr procname;  }' | column -t -s "|"
+    netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $9 | getline procname;pos=split($4,chunks,".");addr=$4;sub(/\.[^.]*$/,"",addr);port=chunks[pos]; print "proto: " $1 "|addr: " addr "|port: " port "|pid: " $9 "|name: " procname;  }' | column -t -s "|"
 }
