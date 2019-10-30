@@ -32,3 +32,8 @@ alias xargs0='xargs -0 '
 
 # Image aspect ratio checking to tab-separated output (can be piped to "align -s t+")
 alias archeck="identify -format '%[fx:round((w*1000)/h)/1000]	%wx%h	%M\n'"
+
+# Mac function to list TCP ports the machine is listening on since netstat -l doesn't work right
+macnst (){
+    netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $9 | getline procname;pos=split($4,chunks,".");addr=$4;sub(/\.[^.]*$/,"",addr);port=chunks[pos]; print "proto: " $1 "|addr: " addr "|port: " port "|pid: " $9 "|name: " procname;  }' | column -t -s "|"
+}
