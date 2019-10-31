@@ -3,11 +3,11 @@ function _git_prompt() {
     git_status="$(git status -unormal 2>&1)"
     if ! [[ "$git_status" =~ (Not\ a\ git\ repo|not\ a\ git\ repository) ]]; then
         if [[ "$git_status" =~ nothing\ to\ commit ]]; then
-            local ansi="%K{green}%F{black}"
+            local ansi="%F{green}%S"
         elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-            local ansi="%K{yellow}%F{black}"
+            local ansi="%F{yellow}%S"
         else
-            local ansi="%K{red}%F{black}"
+            local ansi="%F{red}%S"
         fi
         if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
             branch=${match[1]}
@@ -20,7 +20,7 @@ function _git_prompt() {
             branch="($(git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
                 echo HEAD))"
         fi
-        echo -n "${ansi}${branch}%f%k "
+        echo -n "${ansi}${branch}%s%f "
     fi
 }
 
