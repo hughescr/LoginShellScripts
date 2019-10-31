@@ -3,11 +3,11 @@ function _git_prompt() {
     git_status="$(git status -unormal 2>&1)"
     if ! [[ "$git_status" =~ (Not\ a\ git\ repo|not\ a\ git\ repository) ]]; then
         if [[ "$git_status" =~ nothing\ to\ commit ]]; then
-            local ansi="%{$bg[green]%}%{$fg[black]%}"
+            local ansi="%K{green}%F{black}"
         elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-            local ansi="%{$bg[yellow]%}%{$fg[black]%}"
+            local ansi="%K{yellow}%F{black}"
         else
-            local ansi="%{$bg[red]%}%{$fg[black]%}"
+            local ansi="%K{red}%F{black}"
         fi
         if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
             branch=${match[1]}
@@ -20,10 +20,10 @@ function _git_prompt() {
             branch="($(git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
                 echo HEAD))"
         fi
-        echo -n "${ansi}${branch}%{$reset_color%} "
+        echo -n "${ansi}${branch}%f%k "
     fi
 }
 
-PROMPT='%{$reset_color%}$(_git_prompt)[%n@%m:%5~]%# '
+PROMPT='%f%k$(_git_prompt)[%n@%m:%5~]%(!.#.$) '
 
-RPROMPT='$(aws_prompt_info) %(?,$FG[034][R-$?],$FG[160][$?])$FG[033][!%!]%{$reset_color%}'
+RPROMPT='$(aws_prompt_info) %(?,%F{034}[√],%F{160}[$?])%F{033}[!%!]%f%k'
