@@ -12,7 +12,7 @@ function _git_prompt() {
         if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
             branch=" ${match[1]}"
             test "$branch" != master || branch=''
-            branch="$branch $(git describe --tags --dirty --always)"
+            branch="$branch $(git describe --tags --dirty --always)"
         elif [[ "$git_status" =~ HEAD\ detached\ (from|at)\ ([^[:space:]]+) ]]; then
             branch=" ${match[2]}"
         else
