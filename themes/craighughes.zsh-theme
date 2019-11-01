@@ -10,11 +10,11 @@ function _git_prompt() {
             local ansi="%F{red}%S"
         fi
         if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
-            branch=${match[1]}
+            branch=" ${match[1]}"
             test "$branch" != master || branch=''
             branch="$branch $(git describe --tags --dirty --always)"
         elif [[ "$git_status" =~ HEAD\ detached\ (from|at)\ ([^[:space:]]+) ]]; then
-            branch="tag:${match[2]}"
+            branch=" ${match[2]}"
         else
             # Detached HEAD.  (branch=HEAD is a faster alternative.)
             branch="($(git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
