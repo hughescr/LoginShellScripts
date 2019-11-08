@@ -70,16 +70,11 @@ ZSH_CUSTOM=${HOME}/.zshd
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
          aws
-         bundler
-         command-not-found
          dash
-         dirhistory
          gitfast
          history-substring-search
          httpie
          iterm2
-         mosh
-         rbenv
          sublime
          yarn
          )
