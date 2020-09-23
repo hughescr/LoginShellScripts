@@ -39,7 +39,9 @@ macnst (){
 }
 
 # ZSH wants to correct "mocha" to "mosh" -- stop that!
+# "yarn test" will try "yarn tests" if there's a directory called "tests"
 if [ -n "$ZSH_VERSION" ]; then
 	alias mocha='nocorrect mocha'
 	alias serverless='nocorrect serverless'
+    alias yarn='nocorrect yarn'
 fi
