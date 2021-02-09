@@ -71,6 +71,8 @@ ZSH_CUSTOM=${HOME}/.zshd
 plugins=(
          aws
          dash
+         git-auto-fetch
+         git-prompt
          gitfast
          history-substring-search
          httpie
