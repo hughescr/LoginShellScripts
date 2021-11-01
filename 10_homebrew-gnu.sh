@@ -1,12 +1,18 @@
-if [ -x /usr/local/bin/brew ]; then
+if [ -x /opt/homebrew/bin/brew ]; then
+    BREW_PREFIX=/opt/homebrew
+elif [ -x /usr/local/bin/brew ]; then
+    BREW_PREFIX=/usr/local
+fi
+
+if [ -n "${BREW_PREFIX}" ]; then
     # Coreutils
-    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+    export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:$MANPATH"
 
     # GNU tar
-    export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+    export PATH="${BREW_PREFIX}/opt/gnu-tar/libexec/gnubin:$PATH"
 
     # GNU sed
-    export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-    export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+    export PATH="${BREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
+    export MANPATH="${BREW_PREFIX}/opt/gnu-sed/libexec/gnuman:$MANPATH"
 fi

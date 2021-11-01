@@ -1,4 +1,3 @@
-#!/usr/local/bin/bash
 set -o emacs
 
 # Terminal colours - must use \[ and \] to tell readline about them, so bash line editing works
