@@ -85,7 +85,3 @@ plugins=(
          )
 
 source ${ZSH}/oh-my-zsh.sh
-
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
-
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
