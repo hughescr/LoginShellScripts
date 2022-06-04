@@ -1,5 +1,5 @@
 if [ -n "$ZSH" ]; then
-	autoload bashcompinit
-	bashcompinit
+	zstyle ':completion:*:*:subl'\'':*:*' ignored-patterns '*.sublime-workspace'
+else
+	complete -f -X '*.sublime-workspace' -o filenames subl
 fi
-complete -f -X '*.sublime-workspace' -o filenames subl
