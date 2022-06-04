@@ -73,6 +73,7 @@ plugins=(
          aws
          command-not-found
          dash
+         gh
          git-auto-fetch
          git-flow
          git-prompt
