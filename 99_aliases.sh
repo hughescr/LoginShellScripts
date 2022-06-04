@@ -45,3 +45,5 @@ if [ -n "$ZSH_VERSION" ]; then
 	alias serverless='nocorrect serverless'
 	alias yarn='nocorrect yarn'
 fi
+
+alias subl='/Applications/Sublime\ Text*.app/Contents/SharedSupport/bin/subl'
