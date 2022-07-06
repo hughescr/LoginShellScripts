@@ -81,6 +81,7 @@ plugins=(
          history-substring-search
          httpie
          iterm2
+         wakatime
          yarn
          )
 
