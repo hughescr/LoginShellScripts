@@ -46,6 +46,7 @@ if [ -n "$ZSH_VERSION" ]; then
 	alias yarn='nocorrect yarn'
 	alias jest='nocorrect jest'
 	alias docker='nocorrect docker'
+	alias asn='sudo asn'
 fi
 
 alias subl='/Applications/Sublime\ Text*.app/Contents/SharedSupport/bin/subl'
