@@ -6,3 +6,4 @@ setopt hist_fcntl_lock
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_ignore_all_dups
+hgrep () { fc -Dlim "*$@*" 1 }
