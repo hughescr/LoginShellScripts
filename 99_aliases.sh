@@ -35,7 +35,7 @@ alias archeck="identify -format '%[fx:round((w*1000)/h)/1000]	%wx%h	%M\n'"
 
 # Mac function to list TCP ports the machine is listening on since netstat -l doesn't work right
 macnst (){
-    netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $9 | getline procname;pos=split($4,chunks,".");addr=$4;sub(/\.[^.]*$/,"",addr);port=chunks[pos]; print "proto: " $1 "|addr: " addr "|port: " port "|pid: " $9 "|name: " procname;  }' | column -t -s "|"
+    netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $11 | getline procname;pos=split($4,chunks,".");addr=$4;sub(/\.[^.]*$/,"",addr);port=chunks[pos]; print "proto: " $1 "|addr: " addr "|port: " port "|pid: " $11 "|name: " procname;  }' | column -t -s "|"
 }
 
 # ZSH wants to correct "mocha" to "mosh" -- stop that!
