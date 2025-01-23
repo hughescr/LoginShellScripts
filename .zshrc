@@ -89,3 +89,6 @@ source ${ZSH}/oh-my-zsh.sh
 
 # Created by `pipx` on 2023-08-08 00:53:32
 export PATH="$PATH:/Users/craig/.local/bin"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/craig/.lmstudio/bin"
