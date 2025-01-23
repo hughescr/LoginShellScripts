@@ -17,6 +17,9 @@ alias decolor='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 # Allow aliases to be sudo'd
 alias sudo='sudo '
 
+# Always run asn a root
+alias asn='sudo asn'
+
 # Merge master to develop then push to github with tags
 alias hubpush='git checkout develop;git merge master;git push github master develop --follow-tags'
 
@@ -41,12 +44,12 @@ macnst (){
 # ZSH wants to correct "mocha" to "mosh" -- stop that!
 # "yarn test" will try "yarn tests" if there's a directory called "tests"
 if [ -n "$ZSH_VERSION" ]; then
+	alias docker='nocorrect docker'
+	alias jest='nocorrect jest'
 	alias mocha='nocorrect mocha'
 	alias serverless='nocorrect serverless'
+	alias tsc='nocorrect tsc'
 	alias yarn='nocorrect yarn'
-	alias jest='nocorrect jest'
-	alias docker='nocorrect docker'
-	alias asn='sudo asn'
 fi
 
 alias subl='/Applications/Sublime\ Text*.app/Contents/SharedSupport/bin/subl'
