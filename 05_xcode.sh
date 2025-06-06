@@ -1,1 +1,1 @@
-export PATH=`xcode-select -print-path`/usr/bin:$PATH
+export PATH=$(xcode-select -print-path)/usr/bin:$PATH
