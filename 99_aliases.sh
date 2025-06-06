@@ -24,7 +24,7 @@ alias asn='sudo asn'
 alias hubpush='git checkout develop;git merge master;git push github master develop --follow-tags'
 
 # Command line error fixing
-thefuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
+command -v thefuck >/dev/null && eval "$(thefuck --alias)"
 
 # Use helpful defaults for nettop
 alias nettop='nettop -cdP -j bytes_in,bytes_out -k interface,state,rx_dupe,rx_ooo,re-tx,rtt_avg,rcvsize,tx_win,tc_class,tc_mgt,cc_algo,P,C,R,W'
