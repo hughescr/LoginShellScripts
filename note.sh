@@ -10,11 +10,15 @@ function note() {
     else
         title=$(cat)
     fi
+    local esc_title=${title//\\/\\\\}
+    esc_title=${esc_title//\"/\\\"}
+    local esc_body=${body//\\/\\\\}
+    esc_body=${esc_body//\"/\\\"}
     osascript >/dev/null <<EOF
 tell application "Notes"
     tell account "iCloud"
         tell folder "Notes"
-            make new note with properties {name:"$title", body:"$title" & "<br><br>" & "$body"}
+            make new note with properties {name:"$esc_title", body:"$esc_title" & "<br><br>" & "$esc_body"}
         end tell
     end tell
 end tell
