@@ -54,4 +54,4 @@ fi
 
 alias subl='/Applications/Sublime\ Text*.app/Contents/SharedSupport/bin/subl'
 
-alias claude='bunx --bun @anthropic-ai/claude-code@latest'
+alias claude='nocorrect bunx --bun @anthropic-ai/claude-code@latest'
