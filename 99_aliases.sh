@@ -53,3 +53,5 @@ if [ -n "$ZSH_VERSION" ]; then
 fi
 
 alias subl='/Applications/Sublime\ Text*.app/Contents/SharedSupport/bin/subl'
+
+alias claude='bunx --bun @anthropic-ai/claude-code@latest'
