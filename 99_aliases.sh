@@ -21,7 +21,7 @@ alias sudo='sudo '
 alias asn='sudo asn'
 
 # Merge master to develop then push to github with tags
-alias hubpush='git checkout develop;git merge master;git push github master develop --follow-tags'
+alias hubpush='git checkout develop;git merge main;git push github main develop --follow-tags'
 
 # Command line error fixing
 command -v thefuck >/dev/null && eval "$(thefuck --alias)"
