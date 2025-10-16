@@ -1,3 +1,3 @@
-if [ -x "/usr/local/bin/op" ]; then
-    eval "$(/usr/local/bin/op completion zsh)"; compdef _op op
+if command -v op >/dev/null 2>&1; then
+	eval "$(op completion zsh)"
 fi
