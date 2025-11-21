@@ -1,4 +1,4 @@
-alias codex='/opt/homebrew/bin/bunx @openai/codex@latest --search'
+alias codex='/opt/homebrew/bin/bunx @openai/codex --search'
 
 # make completion look through aliases
 setopt COMPLETE_ALIASES
