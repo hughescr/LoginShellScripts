@@ -55,3 +55,5 @@ fi
 alias subl='/Applications/Sublime\ Text*.app/Contents/SharedSupport/bin/subl'
 
 alias claude='nocorrect ~/.claude/claude-smart.sh'
+# Bug in claude code tries to use /tmp/claude-501 which is not allowed by sandbox! Derp.
+export CLAUDE_CODE_TMPDIR=/tmp/claude
