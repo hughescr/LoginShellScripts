@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/craig/.docker/bin"
+# End of Docker Desktop section.
+
 shopt -s extglob
 
 if [[ -d "$HOME/.bashd"  && -r "$HOME/.bashd" && -x "$HOME/.bashd" ]]; then
